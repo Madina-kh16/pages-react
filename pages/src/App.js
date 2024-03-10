@@ -1,8 +1,13 @@
-import logo from "./logo.svg";
-import "./App.css";
+import Form from "./components/form/Form";
+import Container from "./components/container/container";
 
-function App() {
-  return <div className="App">Pages app durak madina</div>;
-}
+const App = () => {
+  return (
+    <div className="todo">
+      <Form />
+      <Container />
+    </div>
+  );
+};
 
 export default App;
