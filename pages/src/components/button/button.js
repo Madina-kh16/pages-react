@@ -1,4 +1,4 @@
-const Button = ({ value, tasks, setTasks, setValue, task }) => {
+const Button = ({ value, tasks, setTasks, setValue }) => {
   const getInputValue = (e) => {
     e.preventDefault();
     if (value.trim() !== "" && tasks.every((item) => item.task !== value)) {

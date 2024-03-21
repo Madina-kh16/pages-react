@@ -1,15 +1,19 @@
 import Task from "../task/task";
 
-const Container = ({ tasks, setTasks, date }) => {
+const Container = ({ value, tasks, setTasks, date }) => {
   return (
     <ul className="todo__items">
-      {tasks.map(({ task, isComplited, i }) => (
+      {(value === "all"
+        ? tasks
+        : value === "active"
+        ? tasks.filter(({ isComplited }) => !isComplited)
+        : tasks.filter(({ isComplited }) => isComplited)
+      ).map(({ task, isComplited }) => (
         <Task
           task={task}
           date={date}
           setTasks={setTasks}
-          key={i}
-          key2={task}
+          key={task}
           tasks={tasks}
           isComplited={isComplited}
         />

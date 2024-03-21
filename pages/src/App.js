@@ -7,6 +7,7 @@ const localStorageTask = localStorage.getItem("task")
   : [];
 
 const App = () => {
+  const [value, setValue] = useState("all");
   const [tasks, setTasks] = useState(localStorageTask);
 
   useEffect(() => {
@@ -15,8 +16,18 @@ const App = () => {
 
   return (
     <div className="todo">
-      <Form tasks={tasks} setTasks={setTasks} />
-      <Container tasks={tasks} setTasks={setTasks} />
+      <Form
+        tasks={tasks}
+        setTasks={setTasks}
+        value={value}
+        setValue={setValue}
+      />
+      <Container
+        tasks={tasks}
+        setTasks={setTasks}
+        value={value}
+        setValue={setValue}
+      />
     </div>
   );
 };
